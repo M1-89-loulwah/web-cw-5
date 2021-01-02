@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>حاسبة BMI 🙊🙉🙈</title>
+    <script src="./js/script.js"></script>
   </head>
   <body>
     <div>
@@ -51,9 +52,13 @@
     <script>
       function getBMI() {
         // height القيمة التي تدخلها في الحقل الأول تُخزن في المتغير
+        let h = document.getElementById("height").value;
         // weight القيمة التي تدخلها في الحقل الثاني تُخزن في المتغير
+        let w = document.getElementById("weight").value;
         // (مؤشر كتلة الجسم = الوزن/(الطول*الطول
         // 👇🏻 قم بترجمة المعادلة السابقة إلى كود
+        let BMI = (w/(h*h));
+        console.log(BMI);
         // ثم قم باختبار قيمة الناتج لتتحقق الشروط التالية
         /*
             BMIالحالة               مؤشر كتلة الجسم                        
@@ -62,6 +67,19 @@
               يا للهول! 😲          أكبر من أو يساوي 30
               لا أدري! 🤷🏻‍♀️                   أي شي ثاني
         */
+       if(BMI <=20){
+         document.getElementById("status").innerText = "أنت نحيف للغاية";
+
+       }else if(BMI <20 && BMI<30){
+        document.getElementById("status").innerText = "  وزنك جيد";
+
+       }else if (BMI >= 30){
+        document.getElementById("status").innerText =" يا للهول";
+
+       }else{
+        document.getElementById("status").innerText =" لا أدري ";
+       }
+
       }
     </script>
   </body>
