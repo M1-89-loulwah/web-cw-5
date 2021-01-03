@@ -8,14 +8,16 @@ function submit(){
     console.log(F);
     let O = document.getElementById(`Oral`).value;
     console.log(O);
-let calculatedgrade =(Q*100)+(M*100)+(F*100)+(O*100);
+ let calculatedgrade =(Q*100)+(M*100)+(F*100)+(O*100);
+
 console.log( calculatedgrade);
-let finalgrade = calculatedgrade/100;
+ let finalgrade = calculatedgrade/400;
+
 console.log(finalgrade);
 let total = document.getElementById('total_grades');
 total.innerText =`${finalgrade}`;
 
-if(finalgrade >=90 && finalgrade == 100){
+if(finalgrade >=90 || finalgrade == 100){
     document.getElementById(`final_grade`).innerText = "A";
 
   }else if( finalgrade >= 80){
